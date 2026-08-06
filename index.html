@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ChangePilot AI click-through prototype for AI-assisted infrastructure change management." />
+  <title>ChangePilot AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">CP</div>
+        <div>
+          <h1>ChangePilot AI</h1>
+          <p>Infrastructure intelligence</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Primary navigation">
+        <button class="nav-item active" data-page="dashboard">Dashboard</button>
+        <button class="nav-item" data-page="new-change">New Change</button>
+        <button class="nav-item" data-page="risk-analysis">Risk Analysis</button>
+        <button class="nav-item" data-page="dependencies">Dependencies</button>
+        <button class="nav-item" data-page="release-planning">Release Planning</button>
+        <button class="nav-item" data-page="analytics">Analytics</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="status-dot"></span>
+        Enterprise workspace
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Product engineering prototype</p>
+          <h2 id="page-title">Infrastructure Change Dashboard</h2>
+        </div>
+        <div class="topbar-actions">
+          <button class="secondary-button" data-page-link="release-planning">Release calendar</button>
+          <button class="primary-button" data-page-link="new-change">Create change</button>
+          <div class="user-avatar">GP</div>
+        </div>
+      </header>
+
+      <section class="page active" id="dashboard">
+        <div class="hero-panel">
+          <div>
+            <span class="hero-badge">AI-assisted change intelligence</span>
+            <h3>Ship infrastructure changes with greater confidence.</h3>
+            <p>ChangePilot AI combines historical change data, infrastructure dependencies, operational telemetry, and product workflows to identify risk before a deployment reaches production.</p>
+            <div class="hero-actions">
+              <button class="primary-button" data-page-link="new-change">Analyze a new change</button>
+              <button class="text-button" data-page-link="risk-analysis">Review sample analysis →</button>
+            </div>
+          </div>
+          <div class="confidence-panel">
+            <span>Change confidence</span>
+            <strong>92%</strong>
+            <p>Across approved changes this quarter</p>
+            <div class="progress-track"><div class="progress-fill"></div></div>
+          </div>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card"><span>Deployment success</span><strong>97.6%</strong><p>Last 90 days</p></article>
+          <article class="metric-card"><span>High-risk changes</span><strong>3</strong><p>Upcoming releases</p></article>
+          <article class="metric-card"><span>Approval cycle</span><strong>4.2 hrs</strong><p>Average review time</p></article>
+          <article class="metric-card"><span>AI recommendations</span><strong>48</strong><p>81% accepted</p></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="content-card">
+            <div class="card-header">
+              <div><p class="eyebrow">Change portfolio</p><h3>Upcoming infrastructure changes</h3></div>
+              <button class="text-button" data-page-link="release-planning">View all</button>
+            </div>
+            <div class="change-list">
+              <button class="change-item" data-page-link="risk-analysis">
+                <div><strong>Kubernetes node pool upgrade</strong><small>CHG-2048 · Production</small></div>
+                <span class="risk-badge high">High</span>
+              </button>
+              <div class="change-item">
+                <div><strong>Terraform network policy update</strong><small>CHG-2051 · Production</small></div>
+                <span class="risk-badge medium">Medium</span>
+              </div>
+              <div class="change-item">
+                <div><strong>Observability collector rollout</strong><small>CHG-2055 · Staging</small></div>
+                <span class="risk-badge low">Low</span>
+              </div>
+            </div>
+          </section>
+
+          <aside class="content-card">
+            <div class="card-header"><div><p class="eyebrow">AI advisor</p><h3>Recommended action</h3></div><span class="ai-chip">AI</span></div>
+            <h4>Reschedule the node pool upgrade</h4>
+            <p>Historical data shows elevated latency when cluster upgrades overlap with the weekly billing batch.</p>
+            <div class="recommendation-list">
+              <div><span>Recommended window</span><strong>Saturday, 11:30 PM</strong></div>
+              <div><span>Confidence</span><strong>89%</strong></div>
+              <div><span>Related incidents</span><strong>3 identified</strong></div>
+            </div>
+            <button class="primary-button full-width" data-page-link="risk-analysis">Review analysis</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page" id="new-change">
+        <div class="section-intro">
+          <div><p class="eyebrow">New infrastructure change</p><h3>Describe the proposed deployment</h3><p>Provide the minimum information needed to evaluate risk, dependencies, approvals, and scheduling.</p></div>
+          <span class="step-indicator">Step 1 of 3</span>
+        </div>
+        <div class="form-layout">
+          <form class="content-card change-form" id="change-form">
+            <label>Change title<input id="change-title" value="Kubernetes node pool upgrade" /></label>
+            <div class="two-column">
+              <label>Environment<select><option>Production</option><option>Staging</option></select></label>
+              <label>Change type<select><option>Platform upgrade</option><option>Infrastructure as code</option></select></label>
+            </div>
+            <label>Business purpose<textarea rows="4">Upgrade production Kubernetes worker nodes to address security findings and maintain vendor support.</textarea></label>
+            <label>Implementation summary<textarea rows="5">Drain and replace nodes one availability zone at a time, validate application health, confirm observability signals, and proceed only after approval gates pass.</textarea></label>
+            <div class="form-actions">
+              <button type="button" class="secondary-button">Save draft</button>
+              <button type="submit" class="primary-button">Analyze change</button>
+            </div>
+          </form>
+          <aside class="content-card">
+            <p class="eyebrow">Submission guidance</p>
+            <h3>What improves the analysis?</h3>
+            <ul class="check-list">
+              <li>Clear implementation and rollback steps</li>
+              <li>Accurate service and environment details</li>
+              <li>Expected business impact</li>
+              <li>Monitoring and validation plans</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page" id="risk-analysis">
+        <div class="section-intro">
+          <div><p class="eyebrow">AI risk analysis · CHG-2048</p><h3>Kubernetes node pool upgrade</h3><p>Based on historical changes, incidents, dependencies, release schedules, and telemetry.</p></div>
+          <span>Analyzed 2 minutes ago</span>
+        </div>
+        <div class="analysis-summary-grid">
+          <article class="risk-score-card">
+            <span>Overall risk score</span>
+            <div class="risk-score-circle"><strong>78</strong><small>of 100</small></div>
+            <span class="risk-badge high">High risk</span>
+          </article>
+          <article class="content-card">
+            <p class="eyebrow">AI summary</p>
+            <h3>Review before approval</h3>
+            <p>This change has a high likelihood of customer impact if executed during the requested window. It overlaps with a critical billing batch and affects shared services.</p>
+            <button class="primary-button" id="accept-recommendation">Accept recommended window</button>
+            <p class="success-message" id="recommendation-message">Recommendation accepted. Release plan updated.</p>
+          </article>
+        </div>
+        <div class="analysis-grid">
+          <section class="content-card">
+            <p class="eyebrow">Risk factors</p>
+            <h3>Why this change is high risk</h3>
+            <div class="risk-factor-list">
+              <div class="risk-factor"><strong>Release-window conflict</strong><span>+24</span></div>
+              <div class="risk-factor"><strong>Shared service dependency</strong><span>+18</span></div>
+              <div class="risk-factor"><strong>Similar incident history</strong><span>+16</span></div>
+              <div class="risk-factor"><strong>Rollback readiness</strong><span>+8</span></div>
+            </div>
+          </section>
+          <aside class="content-card">
+            <p class="eyebrow">Recommended plan</p>
+            <h3>Safer deployment path</h3>
+            <ol class="timeline">
+              <li>Move deployment to Saturday at 11:30 PM.</li>
+              <li>Validate disruption budgets.</li>
+              <li>Add rollback approver.</li>
+              <li>Monitor latency, readiness, and errors.</li>
+            </ol>
+            <button class="secondary-button full-width" data-page-link="dependencies">View impacted dependencies</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page" id="dependencies">
+        <div class="section-intro">
+          <div><p class="eyebrow">Dependency intelligence</p><h3>Impacted services and teams</h3><p>Mapped from service ownership, change history, and runtime telemetry.</p></div>
+          <span class="step-indicator">6 identified</span>
+        </div>
+        <div class="content-card">
+          <div class="dependency-map">
+            <div class="dependency-node center">Kubernetes Node Pool</div>
+            <div class="dependency-node">Authentication</div>
+            <div class="dependency-node">API Gateway</div>
+            <div class="dependency-node">Billing Batch</div>
+            <div class="dependency-node">Observability</div>
+            <div class="dependency-node">Platform Operations</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="release-planning">
+        <div class="section-intro">
+          <div><p class="eyebrow">Release planning</p><h3>Coordinate upcoming changes</h3><p>Sequence work by dependency, operational risk, and business impact.</p></div>
+          <button class="primary-button" data-page-link="new-change">Add change</button>
+        </div>
+        <div class="release-board">
+          <article class="release-card high-release"><span class="risk-badge high">High</span><h4>Kubernetes node pool upgrade</h4><p>Aug 8 · 11:30 PM</p></article>
+          <article class="release-card medium-release"><span class="risk-badge medium">Medium</span><h4>Terraform network policy update</h4><p>Aug 9 · 8:00 PM</p></article>
+          <article class="release-card low-release"><span class="risk-badge low">Low</span><h4>Observability collector rollout</h4><p>Aug 11 · 6:00 PM</p></article>
+        </div>
+      </section>
+
+      <section class="page" id="analytics">
+        <div class="section-intro">
+          <div><p class="eyebrow">Product and operational analytics</p><h3>Measure change quality and adoption</h3><p>Connect product usage to infrastructure outcomes and AI quality.</p></div>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card"><span>Change failure rate</span><strong>4.8%</strong><p>Target below 6%</p></article>
+          <article class="metric-card"><span>Recommendation acceptance</span><strong>81%</strong><p>Across reviewed changes</p></article>
+          <article class="metric-card"><span>Median approval time</span><strong>4.2 hrs</strong><p>Submission to decision</p></article>
+          <article class="metric-card"><span>Weekly active users</span><strong>146</strong><p>Engineering and product users</p></article>
+        </div>
+        <div class="content-card">
+          <p class="eyebrow">Day-one instrumentation</p>
+          <h3>Metrics captured</h3>
+          <div class="instrumentation-grid">
+            <div><strong>Product adoption</strong><p>WAU, MAU, feature adoption, completion.</p></div>
+            <div><strong>Operational outcomes</strong><p>Success rate, rollback rate, MTTR, approval time.</p></div>
+            <div><strong>AI quality</strong><p>Acceptance rate, accuracy, false positives.</p></div>
+            <div><strong>Business impact</strong><p>Engineering time saved and incidents avoided.</p></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
